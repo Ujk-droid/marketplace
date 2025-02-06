@@ -16,8 +16,8 @@ async function getData(slug: string) {
   return data;
 }
 
-export default async function blogArticle({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function blogArticle({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = await getData(slug);
 
   if (!data) {
