@@ -49,7 +49,7 @@ const ProductPage = () => {
           { shop }
         );
         console.log("Fetched product:", response);
-        setProduct(response[0] || any); // Set the product or fallback to null
+        setProduct(response[0] || ""); // Set the product or fallback to null
       } catch (error) {
         if (error instanceof Error) {
           console.error("Failed to fetch product data:", error.message);
